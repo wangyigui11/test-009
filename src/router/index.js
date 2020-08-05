@@ -11,7 +11,6 @@ const routes = [
     component: Home
   },
   {
-<<<<<<< HEAD
     path: '/echarts',
     name: 'echarts',
     component: () => import(/* webpackChunkName: "table" */ '../views/Echarts.vue')
@@ -39,12 +38,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "table" */ '../views/Git.vue')
   },
 
-=======
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
->>>>>>> parent of 0a371ee... 增加了  Echarts  组件
 ]
 
 const router = new VueRouter({
