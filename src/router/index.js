@@ -31,6 +31,12 @@ const routes = [
     // 路由独享的守卫
     component: () => import(/* webpackChunkName: "table" */ '../views/User.vue')
   },
+  {
+    path: '/git',
+    name: 'git',
+    // 路由独享的守卫
+    component: () => import(/* webpackChunkName: "table" */ '../views/Git.vue')
+  },
 
 ]
 
