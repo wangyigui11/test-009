@@ -11,6 +11,7 @@ const routes = [
     component: Home
   },
   {
+<<<<<<< HEAD
     path: '/echarts',
     name: 'echarts',
     component: () => import(/* webpackChunkName: "table" */ '../views/Echarts.vue')
@@ -38,6 +39,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "table" */ '../views/Git.vue')
   },
 
+=======
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+>>>>>>> parent of 0a371ee... 增加了  Echarts  组件
 ]
 
 const router = new VueRouter({
@@ -45,19 +52,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-// // 全局前置钩子
-// router.beforeEach((to, from, next) => {
-//   if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-
-//   else next()
-// })
-
-// 全局后置钩和前置不同的是 这些钩子不会接受next函数 也不会改变导航本身
-// router.afterEach((to, from) => {
-//   //...
-// })
-
-
 
 export default router
