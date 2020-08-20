@@ -8,7 +8,6 @@ Vue.use(ElementUI)  //全局使用ElementUI
 Vue.prototype.$echarts = echarts
 import 'element-ui/lib/theme-chalk/index.css'
 
-
 Vue.config.productionTip = false
 
 new Vue({

@@ -31,6 +31,16 @@ const routes = [
     // 路由独享的守卫
     component: () => import(/* webpackChunkName: "table" */ '../views/User.vue')
   },
+  {
+    path: '/table',
+    name: 'table',
+    component: () => import(/* webpackChunkName: "table" */ '../views/Table.vue')
+  },
+  {
+    path: '/image',
+    name: 'image',
+    component: () => import(/* webpackChunkName: "table" */ '../views/Image.vue')
+  },
 
 ]
 

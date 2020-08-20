@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <input type="text" v-model="count" />
     <el-button @click="increment">点击增加</el-button>
     <p>{{ nickname }}</p>
@@ -12,19 +12,62 @@
     <br />
     <input type="text" placeholder="修改nickname" v-model="nickname1" />
     <button @click="editNickname">确定修改</button>
+    <hr />
+    <img src="../static/fengjing.jpg" alt />
+  </div>-->
+  <!-- <div id="index">
+    <ul>
+      <li v-for="(item, index) in imgArr" :key="index">
+        <img :src="item" />
+      </li>
+    </ul>
+    <p>测试测试测试</p>
+    <p>测试测试测试</p>
+    <p>测试测试测试</p>
+    <p>测试测试测试</p>
+    <img :src="imgArr[2]" />
+  </div>-->
+  <div class="demo-image__preview">
+    <el-image
+      class="profile-comments-ratings-content-list-item--img-item"
+      fit="contain"
+      :src="url"
+      @click.native="handleImgClick()"
+    >
+      <div slot="load" class="image-slot">
+        <i class="el-icon-picture-outline">Loading...</i>
+      </div>
+    </el-image>
+    <el-image-viewer v-if="watchBigImg" :on-close="closeViewer" :url-list="srcList" />
+
+    <!-- <el-image style="width: 100px; height: 100px" :src="url" :preview-src-list="srcList"></el-image> -->
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import { mapGetters } from "vuex";
+import ElImageViewer from "element-ui/packages/image/src/image-viewer";
 export default {
   data() {
     return {
-      nickname1: ""
+      watchBigImg: false,
+      nickname1: "",
+      url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+      srcList: [
+        'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
+        'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
+      ]
     };
   },
   methods: {
+    closeViewer() {
+      this.watchBigImg = false;
+    },
+    handleImgClick() {
+      console.log('11');
+      this.watchBigImg = true;
+    },
     // 通过mutation 的方式， 而非直接修改 store.state.count
     // increment() {
     //   this.$store.commit("increment");
@@ -51,6 +94,9 @@ export default {
     }),
     // 辅助函数
     ...mapGetters({ a: "doneTodos", b: "falseTodos" })
+  },
+  mounted() {
+
   }
 };
 </script>
