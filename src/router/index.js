@@ -41,6 +41,11 @@ const routes = [
     name: 'image',
     component: () => import(/* webpackChunkName: "table" */ '../views/Image.vue')
   },
+  {
+    path: '/top',
+    name: 'top',
+    component: () => import(/* webpackChunkName: "table" */ '../views/Top.vue')
+  },
 
 ]
 

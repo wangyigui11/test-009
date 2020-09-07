@@ -1,7 +1,10 @@
 <template>
   <div>
     <div>
+      <div class="big"></div>
+      <div class="big"></div>
       <el-button @click="onPreview">预览</el-button>
+      <div class="big"></div>
       <div class="big"></div>
       <el-image-viewer v-if="showViewer" :on-close="closeViewer" :url-list="[url]" />
     </div>
@@ -33,9 +36,12 @@ export default {
     },
     // 显示时调用
     afterOpen() {
-      this.scrollTop = document.scrollingElement.scrollTop
-      document.body.style.position = 'fixed'
-      document.body.style.top = -this.scrollTop + 'px'
+      // this.scrollTop = document.scrollingElement.scrollTop
+
+      // document.body.style.position = 'fixed'
+      // // document.body.style.top = -this.scrollTop + 'px'
+      // document.body.style.top = -this.scrollTop + 'px'
+      // console.log('top', -this.scrollTop);
     },
     // 关闭时调用
     beforeClose() {
@@ -49,7 +55,7 @@ export default {
 <style lang="less" scoped>
 .big {
   width: 200px;
-  height: 2000px;
+  height: 200px;
   background-color: pink;
 }
 </style>
